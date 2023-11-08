@@ -7,12 +7,11 @@ from app_forms import StudentForm
 def students(request):
     if request.method == 'POST':
         # the script to check if the form is valid and all field are ok
-        form = StudentForm(request.POST)
+        form = StudentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             # redirect function .please import fom django shortcuts
             return redirect('home')
-
-    form = StudentForm()
+    else:
+        form = StudentForm()
     return render(request, 'students.html', {'form': form})
-
