@@ -23,6 +23,8 @@ from main_app import views
 
 urlpatterns = [
     path('', views.students, name='home'),
+    path('show/', views.show_students, name='show'),
+    path('details/<int:id>', views.details, name='details'),
 
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
