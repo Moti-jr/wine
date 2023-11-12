@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Student</title>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+            {% if student.profile_pic%}
+
+            <img src="{{ student.profile_pic.url }}" class="img-fluid" alt="">
+
+                {% endif %}
+        <h3> {{ student.first_name }} {{ student.last_name }}</h3>
+        <p>Email: {{ student.email }}</p>
+        <p>added on: {{ student.created_at| date:'d-m-y' }}</p>
+        <p>D.OB: {{ student.dob| date:'d-m-y'}}</p>
+        <p>WEIGHT: {{ student.weight}}</p>
+        <p>K.C.PE: {{ student.kcpe_score}}</p>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
