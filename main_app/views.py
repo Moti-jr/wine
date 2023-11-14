@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -21,7 +22,12 @@ def students(request):
 
 def show_students(request):
     data = Student.objects.all()
+
+    paginator = Paginator(data, 50)
+    page_number = request.GET.get('page')
+    data = paginator.get_page(page_number)
     return render(request, 'display.html', {'students': data})
+    # return render(request, 'details.html', {'student': student})
 
 
 def details(request, id):
@@ -46,6 +52,10 @@ def students_search(request):
     if search.isnumeric():
         score = int(search)
         data = Student.objects.filter(kcpe_score=score)
-    return render(request, 'display.html', {'students': data})
+        paginator = Paginator(data, 50)
+        page_number = request.GET.get('page')
+        data = paginator.get_page(page_number)
+        return render(request, 'display.html', {'students': data})
+    # return render(request, 'display.html', {'students': data})
 
 # elastic search

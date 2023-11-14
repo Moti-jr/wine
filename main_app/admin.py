@@ -16,6 +16,8 @@ class StudentAdmin(admin.ModelAdmin):
 
     search_fields = ['first_name'', "kcpe_score', 'is_spoty']
     list_filter = ["is_spoty"]
+    list_per_page = 50
+
 
 
 admin.site.register(Student, StudentAdmin)
