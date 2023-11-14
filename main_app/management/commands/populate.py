@@ -7,15 +7,16 @@ from database import settings
 from main_app.models import Student
 
 
+# my own command on how to upload students direct to the database
 class Command(BaseCommand):
     help = 'populate our DB with students data from json file'
 
     def handle(self, *args, **options):
-        path = os.path.join(settings.BASE_DIR, 'student.json')
+        path = os.path.join(settings.BASE_DIR, 'students.json')
         self.stdout.write(
-            self.style.INFO('START INGESTING DATA')
+            self.style.SUCCESS('START INGESTING DATA')
         )
-        with open() as file:
+        with open(path) as file:
             students = json.load(file)
             for s in students:
                 Student.objects.create(
@@ -25,9 +26,9 @@ class Command(BaseCommand):
                     email=s['email'],
                     dob=s['dob'],
                     weight=s['weight'],
-                    kcpe=s['kcpe_score'],
-                    is_spoty=s['is_sporty'],
-                    profile_pic=s['student/student.png'],
+                    kcpe_score=s['kcpe_score'],
+                    is_spoty=s['is_spoty'],
+                    profile_pic='students/student.png',
                 )
         self.stdout.write(
             self.style.SUCCESS('COMPLETE INGESTING DATA')

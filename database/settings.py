@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 # media is the name of he folder dont mess
-#always install pillow when inputing file
+# always install pillow when inputing file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://dcs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -17,7 +17,7 @@
         <p>D.O.B: {{ student.dob| date:'d-m-y'}}</p>
         <p>WEIGHT: {{ student.weight}}</p>
         <p>K.C.PE: {{ student.kcpe_score}}</p>
-{#        <a href="{% url 'delete' student.id %}" class="btn-warning"></a>#}
+        <a href="{% url 'delete' student.id %}" class="btn btn-danger text-decoration-none">DELETE</a>
 
         </div>
 

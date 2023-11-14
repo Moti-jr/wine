@@ -29,10 +29,10 @@ def details(request, id):
     return render(request, 'details.html', {'student': student})
 
 
-# def delete_student(request, student_id):
-#     student = get_object_or_404(Student, pk=student_id)
-#     student.delete()
-#     return redirect('show')
+def delete_student(request, student_id):
+    student = get_object_or_404(Student, pk=student_id)
+    student.delete()
+    return redirect('show')
 
 
 def students_search(request):

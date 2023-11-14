@@ -23,7 +23,7 @@ class Student(models.Model):
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     is_spoty = models.BooleanField(default=False)
     kcpe_score = models.IntegerField()
-    profile_pic = models.ImageField(upload_to=generate_unique_name, null=True)
+    profile_pic = models.ImageField(upload_to=generate_unique_name, null=True, default="students/student.png")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

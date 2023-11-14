@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+	login
+{% endblock %}
+
+{% block content %}
+	<div class="vh-100">
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+            <form action="" method="post" class="shadow px-3 py-4">
+                {{ form | crispy }}
+                <botton class="btn btn-success rounded-0 w-100"></botton>
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}
