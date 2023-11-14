@@ -1,17 +1,11 @@
+{% extends 'base.html' %}
 {% load crispy_forms_filters %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>students</title>
-</head>
-<body>
-<div class="container  mx-auto justify-content-center">
-    <div class="row">
+{% block content %}
+    {% include 'navbar.html' %}
+	<div class="container">
+    <div class="row justify-content-center ">
         <div class ='col-sm-5'>
-            <h1>student registration</h1>
+            <h1 style="color: coral">Student Registration</h1>
             <form action="" method="POST" enctype="multipart/form-data">
 {#                CSRF CHECK IF DATA COME FROM THE FORM#}
 
@@ -22,6 +16,11 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block title %}
+Signin
+{% endblock %}
 
-</body>
-</html>
+
+
+
