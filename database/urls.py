@@ -24,12 +24,12 @@ from main_app import views
 urlpatterns = [
     path('', views.students, name='home'),
     path('show/', views.show_students, name='show'),
-    path('login', views.show_students, name='login'),
-    path('sigin', views.show_students, name='signin'),
-    path('logout', views.show_students, name='logout'),
+    path('login/', views.signin, name='login'),
+    path('logout', views.signout, name='logout'),
     path('search', views.students_search, name='search'),
     path('details/<int:id>', views.details, name='details'),
     path('students/delete/<int:student_id>', views.delete_student, name='delete'),
+    path('students/update/<int:student_id>', views.update_student, name='update'),
 
 
     path('admin/', admin.site.urls),

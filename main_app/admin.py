@@ -19,5 +19,4 @@ class StudentAdmin(admin.ModelAdmin):
     list_per_page = 50
 
 
-
 admin.site.register(Student, StudentAdmin)

@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os.path
 from pathlib import Path
 
+
+# import pymysql
 from django.conf.global_settings import MEDIA_ROOT
+from django.contrib import messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,7 +88,14 @@ WSGI_APPLICATION = 'database.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # 'students_project'
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST': 'localhost',
+        # 'PORT': '3306',
+        #     python manage.py migrate
+        #     python manage.py populate
+        #     python manage.py createsuperuser
     }
 }
 
@@ -123,10 +133,19 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
-# media is the name of he folder dont mess
-# always install pillow when inputing file
+# media is the name of the folder don't mess
+# always install pillow when inputting file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://dcs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# pymysql.install_as_MySQLdb()
+
+MESSAGE_TAGS = {
+    messages.ERROR: "alert-danger",
+    messages.SUCCESS: "alert-success",
+    messages.WARNING: "alert-warning",
+    messages.INFO: "alert-info",
+}
